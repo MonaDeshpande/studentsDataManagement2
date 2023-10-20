@@ -4,8 +4,12 @@ from .models import students
 
 # Create your views here.
 def home(request):
+    #will fetch data here and send it to template
+    student= students.object.all()
     #return HttpResponse("I am working")
-    return render(request, "authentication/home.html", {})
+    return render(request, "authentication/home.html", {
+        'students':students
+    })
 
 def add_student(request):
     if request.method == "POST":
@@ -34,10 +38,8 @@ def add_student(request):
     
     #save the data
         s.save()
-    
-
-
-
+        
+        
         return redirect("home")
     return render(request, "authentication/add_student.html", {})
 
