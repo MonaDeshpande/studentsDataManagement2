@@ -40,8 +40,8 @@ def add_student(request):
         s.save()
         print("data saved")
         return redirect("home")
-    print("data is not coming")
-    return render(request, "authentication/add_student.html", {})
+    else:
+        return render(request, "authentication/add_student.html", {})
 
 def signup(request):
     #print("processing signup")
