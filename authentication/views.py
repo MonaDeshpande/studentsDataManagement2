@@ -5,10 +5,10 @@ from .models import students
 # Create your views here.
 def home(request):
     #will fetch data here and send it to template
-    student= students.object.all()
+    student= students.objects.all
     #return HttpResponse("I am working")
     return render(request, "authentication/home.html", {
-        'students':students
+        'student':student
     })
 
 def add_student(request):
@@ -18,14 +18,14 @@ def add_student(request):
     #Steps to fetch data
         
     #Data fetch
-        student_first_name=request.POST.get("emp_name")
-        student_last_name=request.POST.get("emp_name")
-        student_address=request.POST.get("emp_name")
-        student_mobile=request.POST.get("emp_name")
-        student_Phy=request.POST.get("emp_name")
-        student_Chem=request.POST.get("emp_name")
-        student_Bio=request.POST.get("emp_name")
-        student_Maths=request.POST.get("emp_name")
+        student_first_name=request.POST.get("firstname")
+        student_last_name=request.POST.get("lastname")
+        student_address=request.POST.get("address")
+        student_mobile=request.POST.get("mobile")
+        student_Phy=request.POST.get("Phy")
+        student_Chem=request.POST.get("Chem")
+        student_Bio=request.POST.get("Bio")
+        student_Maths=request.POST.get("Maths")
 
     #Create model object and set the data
         s= students()
@@ -38,9 +38,9 @@ def add_student(request):
     
     #save the data
         s.save()
-        
-        
+        print("data saved")
         return redirect("home")
+    print("data is not coming")
     return render(request, "authentication/add_student.html", {})
 
 def signup(request):

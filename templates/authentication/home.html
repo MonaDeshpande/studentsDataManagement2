@@ -25,8 +25,9 @@
           </tr>
         </thead>
         <tbody>
-            { % for s in students %}
-          <tr>
+            {% for s in students %}
+            <tr>
+
             <td>{{s.id}}</td>
             <td>{{s.students_first_name}}</td>
             <td>{{s.students_last_name}}</td>
@@ -39,7 +40,10 @@
             <td>
                 <button type="button" class="btn btn-success">Update</button>
                 <button type="button" class="btn btn-danger">Delete</button>
-            </td>            
+            </td>   
+          <tr>
+            {% endfor %}
+                    
         </tbody>
       </table>
 </body>
