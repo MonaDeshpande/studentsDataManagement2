@@ -1,7 +1,8 @@
 from django.db import models
-
+0
 # Create your models here.
 class students(models.Model):
+    students_id = models.CharField(max_length=20)
     students_first_name = models.CharField(max_length=20)
     students_last_name = models.CharField(max_length=20)
     students_address = models.CharField(max_length=20)

@@ -18,6 +18,7 @@ def add_student(request):
     #Steps to fetch data
         
     #Data fetch
+        student_id=request.POST.get("student_id")
         student_first_name=request.POST.get("firstname")
         student_last_name=request.POST.get("lastname")
         student_address=request.POST.get("address")
@@ -29,6 +30,7 @@ def add_student(request):
 
     #Create model object and set the data
         s= students()
+        s.students_id=student_id
         s.students_first_name =student_first_name
         s.students_last_name=student_last_name
         s.students_address=student_address
@@ -41,6 +43,13 @@ def add_student(request):
         print("data saved")
         return redirect("home")
     return render(request, "authentication/add_student.html", {})
+
+def delete_student(request, student_id):
+    # print(student_id)
+    # student = student.objects.get(pk = student_id)
+    # student.delete()
+    # redirect("home")
+    pass
 
 def signup(request):
     #print("processing signup")
