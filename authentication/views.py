@@ -5,7 +5,7 @@ from .models import students
 # Create your views here.
 def home(request):
     #will fetch data here and send it to template
-    student= students.objects.all
+    student= students.objects.all()
     #return HttpResponse("I am working")
     return render(request, "authentication/home.html", {
         'student':student
