@@ -5,10 +5,10 @@ from .models import students
 # Create your views here.
 def home(request):
     #will fetch data here and send it to template
-    student= students.objects.all()
+    Students= students.objects.all()
     #return HttpResponse("I am working")
     return render(request, "authentication/home.html", {
-        'student':student
+        'students':Students
     })
 
 def add_student(request):
