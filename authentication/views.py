@@ -34,9 +34,11 @@ def add_student(request):
         s.students_first_name =student_first_name
         s.students_last_name=student_last_name
         s.students_address=student_address
+        s.students_mobile=student_mobile
         s.students_phy=student_Phy
         s.students_chem=student_Chem
         s.students_bio=student_Bio
+        s.students_maths=student_Maths
     
     #save the data
         s.save()
@@ -45,11 +47,10 @@ def add_student(request):
     return render(request, "authentication/add_student.html", {})
 
 def delete_student(request, student_id):
-    # print(student_id)
-    # student = student.objects.get(pk = student_id)
-    # student.delete()
-    # redirect("home")
-    pass
+    print(student_id)
+    student = student.objects.get(pk = student_id)
+    student.delete()
+    redirect("home")
 
 def signup(request):
     #print("processing signup")
