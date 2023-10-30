@@ -18,7 +18,7 @@ def add_student(request):
     #Steps to fetch data
         
     #Data fetch
-        unique_no=request.POST.get("unique_id")
+        unique_no=request.POST.get("unique_no")
         student_first_name=request.POST.get("firstname")
         student_last_name=request.POST.get("lastname")
         student_address=request.POST.get("address")
