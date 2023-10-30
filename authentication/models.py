@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class students(models.Model):
-    unique_no = models.CharField(max_length=20)
+    unique_no = models.CharField(max_length=10)
     students_first_name = models.CharField(max_length=20)
     students_last_name = models.CharField(max_length=20)
     students_address = models.CharField(max_length=20)
