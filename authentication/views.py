@@ -46,9 +46,9 @@ def add_student(request):
         return redirect("home")
     return render(request, "authentication/add_student.html", {})
 
-def delete_student(request, student_id):
-    print(student_id)
-    student = student.objects.get(pk = student_id)
+def delete_student(request, unique_no):
+    print(unique_no)
+    student = student.objects.get(pk = unique_no)
     student.delete()
     redirect("home")
 
